@@ -63,20 +63,17 @@
 
 \section*{Problem 1: Differential equation}
 
-
-We are asked to solve the differential equation
+We are asked to find the general solution of the differential equation
 \begin{equation}
-y^{''}(x) + \frac{3}{x}y^{'}(x) - \frac{24}{x^2}y(x) = 56x^6.
+y^{''}(x) + \frac{3}{x}y^{'}(x) - \frac{24}{x^2}y(x) = 56x^6. \label{diff_eq_to_solve}
 \end{equation}
-Multiplying through by $x^2$ yields
+Solving this equation involves two major steps; 1) find the complementary function $f_c$, and 2) find the particular solution.
+For the complementary function, we start by multiplying through by $x^2$ to get
 \begin{equation}
 x^2y^{''}(x) + 3xy^{'}(x) - 24y(x) = 56x^8,
 \end{equation}
 which has the form $ax^2y^{''} + bxy^{y} + cy = g(x)$ and thus is a second order non-homogeneous Cauchy-Euler differential equation.
-
-Solving this equation involves two major steps; 1) find the complementary function $f_c$, and 2) find the particular solution.
-
-For the complementary function, we reconize that $a = 1, b = 3$ and $c = -24$, and write 
+Reconizing $a = 1, b = 3$ and $c = -24$, we can write 
 \begin{equation}
 am(m-1) + bm + c = 0 \rightarrow m(m-1) + 3m -24 = m^2 + 2m -24 = 0,
 \end{equation}
@@ -84,8 +81,7 @@ which yields $m_1 = 4$ and $m_2 = -6$. Since $m_1$ and $m_2$ are two distinct re
 \begin{equation}
 y_c = c_1x^{m_1} + c_2x^{m^2} \rightarrow y_c = c_1x^{4} + c_2x^{-6}.
 \end{equation}
-
-For the particular solution we will use the variation of parameters. Given $y^{''} + p(x)y^{'} + q(x)y = g(x)$. Since $p(x) = 3/x, q(x) = -24/x^2$ and $g(x) = 56x^2$ are all continous on an open interval, the particular solution can be found by
+For the particular solution we will use \textit{variation of parameters}. As we can see, \ref{diff_eq_to_solve} is on the form $y^{''} + p(x)y^{'} + q(x)y = g(x)$. Since $p(x) = 3/x, q(x) = -24/x^2$ and $g(x) = 56x^2$ are all continous on an open interval, the particular solution can be found by
 \begin{equation}
 Y_p = -y_1\int \frac{y_2g(x)}{W(y_1,y_2)}dx + y_2\int \frac{y_1g(x)}{W(y_1, y_2)}dx,
 \end{equation}
@@ -101,7 +97,6 @@ Y_p &= -x^4 \int \frac{x^{-6}56x^6}{-10x^{-3}}dx + x^{-6} \int \frac{x^456x^6}{-
  &= \frac{56}{10}\bigg(\frac{10x^8}{56}\bigg) \\
  &= x^8
 \end{align}
-
 Finnaly, we find our general solution by adding the complementary function and the particular solution togetter
 \begin{equation}
 y(x) = y_c + Y_P \rightarrow y(x) = c_1x^4 + c_2x^{-6} + x^8,
