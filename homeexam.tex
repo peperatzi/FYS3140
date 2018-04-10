@@ -1,0 +1,150 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{braket}
+\usepackage{gensymb}
+\usepackage{amssymb}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{tikz}
+\usepackage{multicol}
+\usetikzlibrary{arrows}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\usepackage{float}
+\restylefloat{figure}
+
+\usepackage[figurename=Figure]{caption}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+ 
+\lstset{style=mystyle}
+\lstset{
+    language=Erlang,
+    mathescape=true
+}
+
+\title{FYS3140 - Home exam 2018}
+\author{Candidate: 15028}
+\date{April 2018}
+
+\begin{document}
+
+\maketitle
+
+\section*{Problem 1: Differential equation}
+
+
+We are asked to solve the differential equation
+\begin{equation}
+y^{''}(x) + \frac{3}{x}y^{'}(x) - \frac{24}{x^2}y(x) = 56x^6.
+\end{equation}
+Multiplying through by $x^2$ yields
+\begin{equation}
+x^2y^{''}(x) + 3xy^{'}(x) - 24y(x) = 56x^8,
+\end{equation}
+which has the form $ax^2y^{''} + bxy^{y} + cy = g(x)$ and thus is a second order non-homogeneous Cauchy-Euler differential equation.
+
+Solving this equation involves two major steps; 1) find the complementary function $f_c$, and 2) find the particular solution.
+
+For the complementary function, we reconize that $a = 1, b = 3$ and $c = -24$, and write 
+\begin{equation}
+am(m-1) + bm + c = 0 \rightarrow m(m-1) + 3m -24 = m^2 + 2m -24 = 0,
+\end{equation}
+which yields $m_1 = 4$ and $m_2 = -6$. Since $m_1$ and $m_2$ are two distinct real roots the complementary function is a function on the form
+\begin{equation}
+y_c = c_1x^{m_1} + c_2x^{m^2} \rightarrow y_c = c_1x^{4} + c_2x^{-6}.
+\end{equation}
+
+For the particular solution we will use the variation of parameters. Given $y^{''} + p(x)y^{'} + q(x)y = g(x)$. Since $p(x) = 3/x, q(x) = -24/x^2$ and $g(x) = 56x^2$ are all continous on an open interval, the particular solution can be found by
+\begin{equation}
+Y_p = -y_1\int \frac{y_2g(x)}{W(y_1,y_2)}dx + y_2\int \frac{y_1g(x)}{W(y_1, y_2)}dx,
+\end{equation}
+where $W(y_1, y_2)$ is the Wronskian of $y_1$ and $y_2$. $y_1$ and $y_2$ is from the complementary function. Starting by finding the Wronskian of $y_1$ and $y_2$
+\begin{equation}
+W = \begin{vmatrix}y_1&y_2\\y_1^{'}&y_2^{'}\end{vmatrix} \rightarrow W = \begin{vmatrix}x^4&x^{-6}\\4x^3&-6x^{-7}\end{vmatrix} = -6x^{-7}x^4 - 4x^3x^{-6} = -10x^{-3},
+\end{equation}
+we can write
+\begin{align}
+Y_p &= -x^4 \int \frac{x^{-6}56x^6}{-10x^{-3}}dx + x^{-6} \int \frac{x^456x^6}{-10x^{-3}}dx \\
+ &= \frac{56}{10}\bigg(x^4 \int x^3 \ dx - x^{-6} \int x^{13} \ dx \bigg) \\
+ &= \frac{56}{10}\bigg(\frac{x^8}{4} - \frac{x^{8}}{14}\bigg) \\
+ &= \frac{56}{10}\bigg(\frac{10x^8}{56}\bigg) \\
+ &= x^8
+\end{align}
+
+Finnaly, we find our general solution by adding the complementary function and the particular solution togetter
+\begin{equation}
+y(x) = y_c + Y_P \rightarrow y(x) = c_1x^4 + c_2x^{-6} + x^8,
+\end{equation}
+which also can be written as
+\begin{equation}
+y(x) = \frac{c_2}{x^{6}} + c_1x^4 + x^8,
+\end{equation}
+and that's my final answer.
+
+\section*{Problem 2: Complex analysis}
+
+\subsection*{Part A:}
+
+\subsubsection*{a$)$}
+
+For a function that has a \textit{pole of order 3} at $z = 3 + i$, a \textit{zero of order 4} at $z = 2i$, we have the following function 
+\begin{equation}
+f(z) = \frac{(z-2i)^4}{(z-[3+i])^3}
+\end{equation}
+
+\subsubsection*{b$)$}
+
+\subsection*{Part B:}
+
+\subsubsection*{a$)$}
+
+\subsubsection*{b$)$}
+
+\subsubsection*{c$)$}
+
+\subsubsection*{d$)$}
+
+\section*{Problem 3: The Dirac delta function}
+
+\subsubsection*{a$)$}
+
+\subsubsection*{b$)$}
+
+\subsubsection*{c$)$}
+
+\subsubsection*{a$)$}
+
+
+\end{document}
+
