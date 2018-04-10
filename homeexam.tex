@@ -125,6 +125,27 @@ f(z) = \frac{(z-2i)^4}{(z-[3+i])^3}
 
 \subsubsection*{b$)$}
 
+We are asked to classify the isolated singularity of the function
+\begin{equation}
+f(x) = \frac{z^3 + 8}{(z-5)^3(z+2)}.
+\end{equation}
+If we write
+\begin{equation}
+f(x) = \frac{1}{(z-5)^3}\frac{z^3+8}{(z+2)}.
+\end{equation}
+Polynomial division, $(z^3+8):(z+2)$, yields
+\begin{equation}
+f(x) = \frac{z^2 - 2z + 4}{(z-5)^3},
+\end{equation}
+which shows $z = -2$ is a \textit{removable singularity}. Now, if we write
+\begin{align}
+\frac{1}{(z-5)^3} &= \bigg(\frac{1}{z-5}\bigg)^3 = \bigg(-\frac{\frac{1}{5}}{1-\frac{z}{5}}\bigg)^3 \\
+ &= \bigg(-\frac{1}{5}\frac{1}{1-\frac{z}{5}}\bigg)^3 = \bigg(-\frac{1}{5}\sum_{n=0}^{\infty}\big(\frac{z}{5}\big)^n\bigg)^3 \\
+ &= \bigg(-\frac{1}{5}\bigg[1 + \frac{z}{5} + \frac{z^2}{25} + \frac{z^3}{25} + ... \bigg]\bigg)^3 \\
+ &= \bigg(\bigg[-\frac{1}{5} - \frac{z}{25} - \frac{z^2}{125} - \frac{z^3}{675} + ... \bigg]\bigg)^3
+\end{align}
+
+
 \subsection*{Part B:}
 
 \subsubsection*{a$)$}
