@@ -137,14 +137,22 @@ which shows $z = -2$ is a \textit{removable singularity}. Now, if we write
 \frac{1}{(z-5)^3} &= \bigg(\frac{1}{z-5}\bigg)^3 = \bigg(-\frac{\frac{1}{5}}{1-\frac{z}{5}}\bigg)^3 \\
  &= \bigg(-\frac{1}{5}\frac{1}{1-\frac{z}{5}}\bigg)^3 = \bigg(-\frac{1}{5}\sum_{n=0}^{\infty}\big(\frac{z}{5}\big)^n\bigg)^3 \\
  &= \bigg(-\frac{1}{5}\bigg[1 + \frac{z}{5} + \frac{z^2}{25} + \frac{z^3}{25} + ... \bigg]\bigg)^3 \\
- &= \bigg(\bigg[-\frac{1}{5} - \frac{z}{25} - \frac{z^2}{125} - \frac{z^3}{675} + ... \bigg]\bigg)^3
+ &= \bigg(-\frac{1}{5} - \frac{z}{25} - \frac{z^2}{125} - \frac{z^3}{675} + ...\bigg)^3
 \end{align}
 
 
 \subsection*{Part B:}
 
 \subsubsection*{a$)$}
-
+We start writing $\cot{(z)}$ as $\cos{(z)}/\sin{(z)}$ to get
+\begin{equation}
+g(z) = f(z)\pi\cot{(\pi z)} = \frac{f(z)\pi\cos{(\pi z)}}{\sin{(\pi z)}}.
+\end{equation}
+If we now set $a(z) \equiv f(z)\pi\cos{\pi z}$ and $b(z) \equiv \sin{\pi z}$ we have that $g(z) = a(z)/b(z)$, $a(n) = \text{finite constant} \neq 0$, and $b(n) = 0$, $b^{'}(n) \neq 0$ and thus the residue can be found by equation $6.2$ in Boas
+\begin{equation}
+Res(n) = \frac{a(n)}{b^{'}(n)} \rightarrow Res(n) = \frac{f(n)\pi\cos(\pi n)}{\pi\cos(\pi n)} = f(n),
+\end{equation}
+which is what we were suppose to show.
 \subsubsection*{b$)$}
 
 \subsubsection*{c$)$}
