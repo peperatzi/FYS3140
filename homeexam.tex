@@ -161,13 +161,43 @@ which is what we were suppose to show.
 
 \section*{Problem 3: The Dirac delta function}
 
-\subsubsection*{a$)$}
+\subsection*{a$)$}
 
-\subsubsection*{b$)$}
+% solution:
+%https://math.stackexchange.com/questions/959178/proof-of-an-identity-of-the-dirac-delta
 
-\subsubsection*{c$)$}
 
-\subsubsection*{a$)$}
+
+We start by using the hint and introduce an arbitrary test funciton $g(x)$. If we write
+\begin{equation}
+\int_{-\infty}^{+\infty} \delta[f(x)]g(x)dx
+\end{equation}
+Then, for every $t_i$, split the integral into parts, namely
+\begin{equation}
+\int_{-\infty}^{+x_0-\epsilon} \delta[f(x)]g(x)dx + \int_{-x_0-\epsilon}^{+x_0 + \epsilon} \delta[f(x)]g(x)dx + \int_{x_0 + \epsilon}^{+\infty} \delta[f(x)]g(x)dx
+\end{equation}
+
+
+\subsection*{b$)$}
+
+\subsubsection*{(i)}
+For $f(t) = t^2 -a^2$ we have $f'(t) = 2t \rightarrow f'(1) = 2, \ f'(2) = 4$ yielding
+\begin{equation}
+\delta(t^2 - a^2) = \delta((t+a)(t-a)) = \sum_{i} \frac{\delta(t-t_i)}{|2t|} = \frac{1}{2}\delta(t-1) + \frac{1}{4}\delta(t-2)
+\end{equation}
+
+\subsubsection*{(i)}
+For $f(t) = \sin(t)$ we have $f'(t) = cos(t) \rightarrow f'(0) = 1 \ f'(\pi) = -1$
+\begin{equation}
+\delta(\sin{(t)}) = \sum_{i} \frac{\delta(t-t_i)}{|cos(t)|} = \delta(t-0) +\delta(t+\pi)
+\end{equation}
+
+
+\subsection*{c$)$}
+
+% Sympy: http://nullege.com/codes/search?cq=sympy.DiracDelta
+
+\subsection*{d$)$}
 
 
 \end{document}
