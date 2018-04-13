@@ -154,6 +154,17 @@ Res(n) = \frac{a(n)}{b^{'}(n)} \rightarrow Res(n) = \frac{f(n)\pi\cos(\pi n)}{\p
 \end{equation}
 which is what we were suppose to show.
 \subsubsection*{b$)$}
+$N = 1/2$ yields $K = 1$, so let's go for that! With $K = 1$, we get the following contour
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{complex_contour}
+\caption{Contour for $N=1/2$.}
+\label{fig:figure_label}
+\end{figure}
+
+
+
 
 \subsubsection*{c$)$}
 
@@ -202,9 +213,9 @@ On a generalized form we can summarize over all $t_i$ which yields
 \subsection*{b$)$}
 
 \subsubsection*{(i)}
-For $f(t) = t^2 -a^2$ we have $f'(t) = 2t \rightarrow f'(1) = 2, \ f'(2) = 4$ yielding
+For $f(t) = t^2 -a^2$ we have $f'(t) = 2t \rightarrow f'(a) = 2a, \ f'(-a) = -2a$ yielding
 \begin{equation}
-\delta(t^2 - a^2) = \delta((t+a)(t-a)) = \sum_{i} \frac{\delta(t-t_i)}{|2t|} = \frac{1}{2}\delta(t-1) + \frac{1}{4}\delta(t-2)
+\delta(t^2 - a^2) = \delta((t+a)(t-a)) = \sum_{i} \frac{\delta(t-t_i)}{|2t|} = \frac{1}{2a}\delta(t-a) + \frac{1}{2a}\delta(t+a)
 \end{equation}
 
 \subsubsection*{(i)}
