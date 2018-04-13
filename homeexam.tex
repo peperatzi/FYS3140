@@ -166,17 +166,38 @@ which is what we were suppose to show.
 % solution:
 %https://math.stackexchange.com/questions/959178/proof-of-an-identity-of-the-dirac-delta
 
-
-
-We start by using the hint and introduce an arbitrary test funciton $g(x)$. If we write
+We will use two usefull identeties in this proof;
 \begin{equation}
-\int_{-\infty}^{+\infty} \delta[f(x)]g(x)dx
+\int_a^b \delta(t)g(x) = \begin{cases}0 &: \not\in (a, b) \\ g(x) &: \in (a,b)\end{cases} \label{delta_ref_1}.
 \end{equation}
-Then, for every $t_i$, split the integral into parts, namely
 \begin{equation}
-\int_{-\infty}^{+x_0-\epsilon} \delta[f(x)]g(x)dx + \int_{-x_0-\epsilon}^{+x_0 + \epsilon} \delta[f(x)]g(x)dx + \int_{x_0 + \epsilon}^{+\infty} \delta[f(x)]g(x)dx
+\int_a^b \delta(ft)g(x) = \frac{1}{|x|}\int\delta(x)g(x)dx \label{delta_ref_2}
 \end{equation}
+We start by using the hint and introduce an arbitrary test funciton $g(t)$. Taking the intergal of this yields
+\begin{equation}
+\int_{-\infty}^{+\infty} \delta[f(x)]g(t)dt,
+\end{equation}
+which can be written as a sum of three intergrals
+\begin{equation}
+\int_{-\infty}^{t_0-\epsilon} \delta[f(t)]g(t)dt + \int_{t_0-\epsilon}^{t_0 + \epsilon} \delta[f(t)]g(t)dt + \int_{t_0 + \epsilon}^{+\infty} \delta[f(t)]g(t)dt.
+\end{equation}
+By the definition of the delta function, we know that $f(t)$ only have a zero in the middle term and thus the first and last integral is zero which yields
+\begin{equation}
+\int_{-\infty}^{+\infty} \delta[f(t)]g(t)dt = \int_{t_0-\epsilon}^{t_0 + \epsilon} \delta[f(t)]g(t)dt.
+\end{equation}
+Expanding $f(t)$ centered at $t_0$ up to the first order yields $f(t_0) + f'(t_0)(t - t_0)$ and thus, with $f(t_0) = 0$, we have
+\begin{equation}
+\int_{-\infty}^{+\infty} \delta[f(t)]g(t)dt = \int_{t_0-\epsilon}^{t_0 + \epsilon} \delta[f'(t_0)(t-t_0)]g(t)dt 
+\end{equation}
+By \ref{delta_ref_2}, we can write
+\begin{equation}
+\int_{-\infty}^{+\infty} \delta[f(t)]g(t)dt = \frac{1}{|f'(t_0)|} \int_{t_0-\epsilon}^{t_0 + \epsilon} \delta(t-t_0)g(t)dt 
+\end{equation}
+On a generalized form we can summarize over all $t_i$ which yields
 
+\begin{equation}
+\int_{-\infty}^{+\infty} \delta[f(t)]g(t)dt = \sum_{i}\frac{1}{|f'(t_i)|} \int_{t_i-\epsilon}^{t_i + \epsilon} \delta(t-t_i)g(t)dt 
+\end{equation}
 
 \subsection*{b$)$}
 
