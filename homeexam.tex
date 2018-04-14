@@ -155,7 +155,7 @@ Res(n) = \frac{a(n)}{b^{'}(n)} \rightarrow Res(n) = \frac{f(n)\pi\cos(\pi n)}{\p
 which is what we were suppose to show.
 \subsubsection*{b$)$}
 $N = 1/2$ yields $K = 1$, so let's go for that! With $K = 1$, we get the following contour
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.6\textwidth]{complex_contour}
 \caption{Contour for $N=1/2$.}
@@ -226,9 +226,34 @@ For $f(t) = \sin(t)$ we have $f'(t) = cos(t) \rightarrow f'(0) = 1 \ f'(\pi) = -
 
 \subsection*{c$)$}
 
-% Sympy: http://nullege.com/codes/search?cq=sympy.DiracDelta
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{matmet_figure_1}
+\caption{As expected we see two peeks at the roots $a \pm 3$.}
+\label{fig:figure_label}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{matmet_figure_2}
+\caption{As expected we see periodical peeks at $n = 0, \pi, 2\pi, ...$.}
+\label{fig:figure_label}
+\end{figure}
 
 \subsection*{d$)$}
+We start with the integral
+\begin{equation}
+\int_{-\pi/2}^{+\pi/2}\cos{t}\delta{[\sin{t}]}dt,
+\end{equation}
+which can we written as
+\begin{equation}
+\int_{-\pi/2}^{+\pi/2}\cos{t}\sum_{i} \frac{\delta(t-t_i)}{|\cos{t_i}|} dt.
+\end{equation}
+We are integrating from $-\pi/2$ to $\pi/2$. In this interval, $\sin{t}$ is only zero at $t=0$ which yields
+\begin{equation}
+\int_{-\pi/2}^{+\pi/2}\cos{t} \frac{\delta(t)}{|\cos{0}|} dt = \int_{-\pi/2}^{+\pi/2}\cos{t}\delta(t) dt = 1.
+\end{equation}
+
 
 
 \end{document}
