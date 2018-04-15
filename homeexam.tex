@@ -161,9 +161,13 @@ $N = 1/2$ yields $K = 1$, so let's go for that! With $K = 1$, we get the followi
 \caption{Contour for $N=1/2$.}
 \label{fig:figure_label}
 \end{figure}
-
-
-
+\begin{equation}
+\lim_{N\to\infty}\int_{\Gamma_N}g(z)dz = \lim_{N\to\infty}\int_{\Gamma_N}\frac{P(z)}{Q(z)}\pi\cot{\pi z}dz = 0
+\end{equation}
+If we use the fact that $y(y) = P(z)/Q(z)$, where $deg(Q(z))\geq deg(P(z))+2$. For $N\to\infty$, $K\approx N$, in which the contour length will approach infinity. An integral on this form tends to zero. we have that $\pi\cot{(\pi z)}\leq M$, in other words that $\pi\cot{\pi z}$ is less then or equal a \textit{constant} $M$, we can write
+\begin{equation}
+M\lim_{N\to\infty}\int_{\Gamma_N}\frac{P(z}{Q(z)}dz = 0.
+\end{equation}
 
 \subsubsection*{c$)$}
 
